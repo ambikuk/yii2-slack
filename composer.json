@@ -1,5 +1,5 @@
 {
-    "name": "ambikuk/yiislack",
+    "name": "ambikuk/yii2-slack",
     "description": "Yii2 slack client based library",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","slack"],

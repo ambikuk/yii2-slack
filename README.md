@@ -52,3 +52,20 @@ Yii::$app->slack->send('New alert from the monitoring system', [
     ]
 ]);
 ```
+
+Use custom settings
+```php
+$slack = Yii::$app->slack;
+$slack->setSetting([
+    'username' => 'Jack',
+    'channel' => '#mychannel'
+]);
+$slack->send('Are we rich yet?');
+```
+
+Use Maknz\Slack\Client functions
+```php
+$slack = Yii::$app->slack->getClient();
+$slack->to('@username')->send('Yo!');
+```
+

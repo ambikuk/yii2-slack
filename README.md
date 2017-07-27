@@ -35,15 +35,20 @@ Now you can send messages right into slack channel via next command:
 
 ```php
 Yii::$app->slack->send('New alert from the monitoring system', [
-  [
-    'title' => 'CPU usage',
-    'value' => '90%',
-    'short' => true // whether the field is short enough to sit side-by-side other fields, defaults to false
-  ],
-  [
-    'title' => 'RAM usage',
-    'value' => '2.5GB of 4GB',
-    'short' => true
-  ]
+    'fallback' => 'Current server stats',
+    'text' => 'Current server stats',
+    'color' => 'danger',
+    'fields' => [
+        [
+          'title' => 'CPU usage',
+          'value' => '90%',
+          'short' => true // whether the field is short enough to sit side-by-side other fields, defaults to false
+        ],
+        [
+          'title' => 'RAM usage',
+          'value' => '2.5GB of 4GB',
+          'short' => true
+        ]
+    ]
 ]);
 ```
